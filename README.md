@@ -45,6 +45,9 @@ Start the minikube in Local Machine
 ```python
 minikube start
 cd Deploy/Minikube
+```
+Create a Deployment in Minikube 
+```python
 kubectl create -f angular.yaml,node-deploment.yaml,node-service.yaml,mongo-deployment.yaml,mongo-service.yaml
 ```
 Check the Pods and Services are created
@@ -52,8 +55,9 @@ Check the Pods and Services are created
 kubectl get pods
 kubectl get services
 ```
-After successfully created Services ,
-Name of Service : mongo-service,node-service and angular-service.
+Successfully created Services Pods and Deployment,
+Name of Service created: 
+mongo-service , node-service and angular-service.
 ```python
 minikube service angular-service
 ```
