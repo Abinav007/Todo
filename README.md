@@ -11,7 +11,7 @@ Picture For App Representation
 ## Deployment
 ### Docker
 Build a couple of  Docker image:
-Picture for Frontend 
+Picture for Frontend and Backend
 ```python
 cd Deploy/Docker
 ```
@@ -41,6 +41,8 @@ docker-compose up
 Above command will run three images : abinavram/todoappangular, abinavram/todoappnode and mongo.
 Picture for Representation three images
 ## Kubernetes
+Picture for Frontend and Backend
+
 Start the minikube in Local Machine
 ```python
 minikube start
