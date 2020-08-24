@@ -57,3 +57,4 @@ Name of Service : mongo-service,node-service and angular-service.
 ```python
 minikube service angular-service
 ```
+You can abe to view the application in Browser.
