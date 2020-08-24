@@ -1,0 +1,38 @@
+<ngb-alert *ngIf="isAlertCloseOpen" type="success" class="mb-0" (close)="isAlertClose()">{{message}}</ngb-alert>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="taskName">
+      <th mat-header-cell *matHeaderCellDef class="avoidClicking"> Name </th>
+      <td class="mat-column-taskName" mat-cell *matCellDef="let element" (click)="changeToInput(element)"> <span *ngIf="editMode!=element._id">{{element.name}}</span>
+      <span *ngIf="editMode==element._id">
+        <input #updateTask style="border: 0;
+        outline: 0;
+        background: transparent;transition: border-bottom 2s;width:100%" class="line" matInput [(ngModel)]="element.name" (blur)="isTaskDone('','',true, element.name)" (keydown.enter)="updateTaskName(element)">
+      </span><br><span><small>Created: {{element.date}}</small></span></td>
+    </ng-container>
+      <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td class="mat-column-status" mat-cell *matCellDef="let element">
+      <div style="cursor: pointer;" *ngIf="editDoneMode != element._id">
+        <span *ngIf="element.isDone == 'N'" (click)="changeToDone(element)"> Not Done </span>
+        <span *ngIf="element.isDone == 'Y'"  (click)="changeToDone(element)"> Done</span><br>
+        <span><small>Modified : {{element.modifiedDate}}</small></span>
+      </div>
+      <div *ngIf="editDoneMode == element._id">
+        <a class ="left" (click)="isTaskDone('N', element)"> Not Done </a>
+        <a class="right" (click)="isTaskDone('Y', element)"> Done</a>
+      </div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="deleteLogo">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td class="mat-column-delete" mat-cell *matCellDef="let element" (click)="deleteData(element)"> 
+        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+        </svg>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table> 
+  

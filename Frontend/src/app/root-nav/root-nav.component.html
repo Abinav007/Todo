@@ -1,0 +1,38 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'push': 'over'"
+      (click)="drawer.toggle()">
+    <mat-toolbar>Task Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['myTask']" [routerLinkActive]="['leftMenuActive']">My Task</a>
+      <a mat-list-item [routerLink]="['officeTask']" [routerLinkActive]="['leftMenuActive']">Office Task</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!-- <div class="container" *ngIf="!(isHandset$ | async)" (click)="drawer.toggle()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div> -->
+      <span style="float: left;">{{taskGroup}}</span>
+      <span style="flex:1 1 auto;"></span>
+      <span style="float: right;transition: 0.5s;" [ngClass]="{ 'rotate' : !commonService.openInput}" (click)="showTextbox()">
+        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+        <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+      </svg></span>
+    </mat-toolbar>
+    <input style = "padding: 0 10px" *ngIf="!commonService.openInput" #taskField placeholder="Your Next Task ..." type="text" value="" [(ngModel)]="taskName" (keydown.enter)="saveTask()"/>
+    <router-outlet></router-outlet>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

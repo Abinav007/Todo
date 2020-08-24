@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-deployment
+spec:
+  selector:
+    matchLabels:
+      name: angular-frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: angular-frontend
+    spec:
+      containers:
+      - name: angular-frontend
+        image: abinavram/todoappangular
+        ports:
+        - containerPort: 4200
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: angular-service
+spec:
+  selector:
+    name: angular-frontend     
+  ports:
+  - name: angular-frontend-port
+    port: 4200
+    protocol: TCP
+  type: LoadBalancer

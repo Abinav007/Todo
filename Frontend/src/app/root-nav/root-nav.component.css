@@ -1,0 +1,65 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+input[type=text] {
+  height:40px;
+  border: 0;
+  width: calc(100% - 2px);
+  margin-left:1px;
+  box-shadow: -8px 10px 0px -7px #ebebeb, 8px 10px 0px -7px #ebebeb;
+  -webkit-transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+}
+input[type=text]:focus {
+  outline: none;
+  box-shadow: -8px 10px 0px -7px #3f51b5, 8px 10px 0px -7px #3f51b5;
+}
+.container {
+  display: inline-block;
+  cursor: pointer;
+  width: 5%
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 4px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.5s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+.rotate{
+  transform:rotate(-45deg);
+}
+
+.mat-sidenav {
+  width: 300px;
+}
+.leftMenuActive{
+  color: #3F51B5;
+}

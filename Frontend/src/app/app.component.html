@@ -1,0 +1,39 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
+</head>
+<body>
+    <header>
+        <div class="main-header" *ngIf="isLoginShow">
+            <h1>Login</h1>
+            <hr/>
+            <p><input type="text" placeholder="Username"></p>
+            <p><input type="password" placeholder="Password"></p>
+            <p><button (click)="login()">Continue</button></p>
+            <p><button (click)="moveToSignUp()">Sign Up</button></p>
+        </div>
+        <div class="main-header" *ngIf="isSignUpShow">
+            <h1>Sign Up</h1>
+            <hr/>
+            <form #userform="ngForm" (ngSubmit)="moveToValidate(userform.value)">
+            <p><input type="text" placeholder="Email Id" name="email" id="email" ngModel></p>
+            <p><input type="text" placeholder="Username" name="username" id="username" ngModel></p>
+            <p><input type="password" placeholder="Password" name="password" id="password" ngModel></p>
+            <p><input type="password" placeholder="Confirm Password" name="cpassword" id="cpassword" ngModel></p>
+            <p><button type="submit">Sign Up</button></p>
+            <p><button (click)="moveToSignUp()">Login</button></p></form>
+        </div>
+        <div class="main-header" *ngIf="isValidateShow">
+            <h1>We have sent you a verification OTP for confirmation</h1>
+            <hr/>
+            <p><input type="text" placeholder="Validate ID Here..."></p>
+            <p><button (click)="validate()">Validate</button></p>
+        </div>
+    </header>
+</body>
+</html> -->
+<app-root-nav></app-root-nav>

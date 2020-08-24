@@ -1,0 +1,18 @@
+version: '3'
+services:
+  angular:
+    image: "abinavram/todoappangular"
+    command: "ng serve --host 0.0.0.0 --disableHostCheck"
+    ports:
+      - "4200:4200"
+  node:
+    image: "abinavram/todoappnode"
+    command: "node todo.js"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "mongo"
+  mongo:
+    image: "mongo"
+    ports:
+      - "27017:27017"
