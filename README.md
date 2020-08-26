@@ -21,6 +21,9 @@ $ docker build -f Dockerfile-frontend -t abinavram/todoappangular .
 
 $ docker build -f Dockerfile-backend -t abinavram/todoappnode .
 ```
+"abinavram/todoappangular" - Image tag for Frontend
+"abinavram/todoappangular" - Image tag for Backend
+
 Run the Docker image using Container:
 Need to specify the port to access the app outside the container and view in Browser
 ```python
@@ -32,15 +35,15 @@ Push the image to Docker Hub
 $ docker push abinavram/todoappangular
 $ docker push abinavram/todoappnode
 ```
-Successfully build the two images for both frontend and Backend :)
-## Docker-Compose
+Successfully build the two images for both frontend and Backend and Uploaded to the Docker Hub :)
+### Docker-Compose
 Docker - Compose will run the multiple images in a multiple container . So that Containers can be accessable.
 ```python
 $ docker-compose up
 ```
 Above command will run three images : abinavram/todoappangular, abinavram/todoappnode and mongo.
 Picture for Representation three images
-## Kubernetes
+### Kubernetes
 Picture for Frontend and Backend
 
 Start the minikube in Local Machine
