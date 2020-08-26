@@ -50,7 +50,11 @@ $ cd Deploy/Minikube
 ```
 Create a Deployment in Minikube 
 ```python
-$ kubectl create -f angular.yaml,node-deploment.yaml,node-service.yaml,mongo-deployment.yaml,mongo-service.yaml
+$ kubectl create -f angular.yaml
+$ kubectl create -f node-deploment.yaml
+$ kubectl create -f node-service.yaml
+$ kubectl create -f mongo-deployment.yaml
+$ kubectl create -f mongo-service.yaml
 ```
 Check the Pods and Services are created
 ```python
