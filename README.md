@@ -4,8 +4,7 @@ ToDo is a Web Application used to monitor the task to be done.
 
 ## Technology Stack
 
-Picture For App Representation
-
+![](images/project_tech_stack.png)
 
 
 ## Deployment
