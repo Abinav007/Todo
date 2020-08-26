@@ -54,29 +54,29 @@ $ cd Deploy/Minikube
 Create a Deployment in Minikube 
 ```python
 $ kubectl create -f angular.yaml
-deployment.apps/angular-deployment created
+  deployment.apps/angular-deployment created
 $ kubectl create -f node-deploment.yaml
-deployment.apps/node created
+  deployment.apps/node created
 $ kubectl create -f node-service.yaml
-service/node created
+  service/node created
 $ kubectl create -f mongo-deployment.yaml
-deployment.apps/mongo created
+  deployment.apps/mongo created
 $ kubectl create -f mongo-service.yaml
-service/mongo created
+  service/mongo created
 ```
 Check the Pods and Services are created
 ```python
 $ kubectl get pods
-NAME                                  READY   STATUS    RESTARTS   AGE
-angular-deployment-776f886685-7ppp6   1/1     Running   3          5d21h
-mongo-d9cf4754b-zf46w                 1/1     Running   9          6d14h
-node-645876894f-td86r                 1/1     Running   10         6d12h
+  NAME                                  READY   STATUS    RESTARTS   AGE
+  angular-deployment-776f886685-7ppp6   1/1     Running   3          5d21h
+  mongo-d9cf4754b-zf46w                 1/1     Running   9          6d14h
+  node-645876894f-td86r                 1/1     Running   10         6d12h
 $ kubectl get services
-NAME              TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)          AGE
-angular-service   LoadBalancer   10.100.238.27    10.100.238.27   4200:30781/TCP   5d21h
-kubernetes        ClusterIP      10.96.0.1        <none>          443/TCP          6d16h
-mongo             ClusterIP      10.111.148.221   <none>          27017/TCP        6d14h
-node              LoadBalancer   10.100.71.34     10.100.71.34    8080:30266/TCP   6d14h
+  NAME              TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)          AGE
+  angular-service   LoadBalancer   10.100.238.27    10.100.238.27   4200:30781/TCP   5d21h
+  kubernetes        ClusterIP      10.96.0.1        <none>          443/TCP          6d16h
+  mongo             ClusterIP      10.111.148.221   <none>          27017/TCP        6d14h
+  node              LoadBalancer   10.100.71.34     10.100.71.34    8080:30266/TCP   6d14h
 ```
 Successfully created Services Pods and Deployment,
 Name of Service created: 
