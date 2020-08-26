@@ -54,6 +54,7 @@ Create a Deployment in Minikube
 ```python
 $ kubectl create -f angular.yaml
   deployment.apps/angular-deployment created
+  service/angular-service created
 $ kubectl create -f node-deploment.yaml
   deployment.apps/node created
 $ kubectl create -f node-service.yaml
