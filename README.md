@@ -1,7 +1,9 @@
 # [ToDo](https://sheltered-shore-92400.herokuapp.com/)
 
 
-ToDo is a Web Application used to monitor tasks to be done.
+ToDo is a Web Application used to monitor tasks to be done.The main two purpose of building Todo application: 
+1. To learn **Full-Stack Development Process.** 
+2. To gain Knowledge in Deploy my app **Docker** and **Kubernetes**
 
 ## Technology Stack
 
