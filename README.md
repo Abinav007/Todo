@@ -1,6 +1,6 @@
 # ToDo
 
-ToDo is a Web Application used to monitor the task to be done.
+ToDo is a Web Application used to monitor task to be done.
 
 ## Technology Stack
 
@@ -84,4 +84,4 @@ mongo-service , node-service and angular-service.
 ```python
 $ minikube service angular-service
 ```
-You can able to view the application in Browser.
+You will be able to view the application in Browser.
