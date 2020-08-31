@@ -95,10 +95,36 @@ I have deployed Todo Application in Heroku Cloud.
 Build the Angular project using Angular CLI: 
 ```python
 $ ng build --prod
+Generating ES5 bundles for differential loading...
+ES5 bundle generation complete.
+
+chunk {0} runtime-es2015.0dae8cbc97194c7caed4.js (runtime) 1.45 kB [entry] [rendered]
+chunk {0} runtime-es5.0dae8cbc97194c7caed4.js (runtime) 1.45 kB [entry] [rendered]
+chunk {2} polyfills-es2015.f332a089ad1600448873.js (polyfills) 36.1 kB [initial] [rendered]
+chunk {3} polyfills-es5.177e85a9724683782539.js (polyfills-es5) 129 kB [initial] [rendered]
+chunk {1} main-es2015.cb907541ee775e80933f.js (main) 345 kB [initial] [rendered]
+chunk {1} main-es5.cb907541ee775e80933f.js (main) 415 kB [initial] [rendered]
+chunk {4} styles.2935066d9c3bef3ac975.css (styles) 204 kB [initial] [rendered]
+Date: 2020-08-31T14:55:13.259Z - Hash: e45636d1e1daf4a0e969 - Time: 120713ms
 ```
 Above command will build the entire project in dist/project-name folder.
-  
+
 For deploying application in heroku App, Run the dist/project-name folder.
 
-My App URL : 
+The below steps will run the application (dist/project-name)  in Heroku Cloud:
+
+1. Create a server.js file
+2.Add the below line in server.js file :
+```python
+app.use(express.static(path.join(__dirname,'/../dist/project-name')));
+```
+3. Create a Procfile (specifies the command that are executed by the app on startup) and Add the below line to run the JS file:
+```python
+web: node Backend/server.js
+```
+where,
+```python
+web : Process type to which Heroku listen and receives the request 
+```
+Here you go , App URL : 
 [https://sheltered-shore-92400.herokuapp.com](https://sheltered-shore-92400.herokuapp.com/)
