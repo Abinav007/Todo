@@ -3,7 +3,7 @@
 
 ToDo is a Web Application used to monitor tasks to be done.The main two purpose of building Todo application: 
 1. To learn **Full-Stack Development Process.** 
-2. To gain Knowledge to Deploy my app **Docker** and **Kubernetes**.
+2. To gain Knowledge to Deploy my app in **Docker** and **Kubernetes**.
 
 ## Technology Stack
 
