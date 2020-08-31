@@ -88,6 +88,17 @@ $ minikube service angular-service
 ```
 You will be able to view the application in Browser.
 
-I have deployed Todo Application in Heroku Cloud .
+### Heroku Cloud
+
+I have deployed Todo Application in Heroku Cloud.
+
+Build the Angular project using Angular CLI: 
+```python
+$ ng build --prod
+```
+Above command will build the entire project in dist/<project-name> folder.
+  
+For deploying application in heroku App, Run the dist/<project-name> folder.
+
 My App URL : 
 [https://sheltered-shore-92400.herokuapp.com](https://sheltered-shore-92400.herokuapp.com/)
