@@ -124,7 +124,7 @@ web: node Backend/server.js
 ```
 where,
 ```python
-web : Process type to which Heroku listen and receives the request 
+web : Process type to which Heroku listen and receives the request. web command will be executed for running ToDo application.
 ```
-Here you go , App URL : 
+Here it is ,ToDo App URL : 
 [https://sheltered-shore-92400.herokuapp.com](https://sheltered-shore-92400.herokuapp.com/)
