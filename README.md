@@ -1,5 +1,4 @@
-# ToDo [Click Here to view To Doo Application](https://sheltered-shore-92400.herokuapp.com/)
-
+# ToDo 
 
 ToDo is a Web Application used to monitor tasks to be done.The main two purpose of building Todo application: 
 1. To learn **Full-Stack Development Process.** 
@@ -88,3 +87,7 @@ mongo-service , node-service and angular-service.
 $ minikube service angular-service
 ```
 You will be able to view the application in Browser.
+
+I have deployed Todo Application in Heroku Cloud .
+My App URL : 
+[https://sheltered-shore-92400.herokuapp.com](https://sheltered-shore-92400.herokuapp.com/)
