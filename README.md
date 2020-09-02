@@ -45,7 +45,7 @@ $ docker-compose up
 Above command will run three images : abinavram/todoappangular, abinavram/todoappnode and mongo.
 Picture for Representation three images
 ### Kubernetes
-Picture for Frontend and Backend
+![](images/kube_design.png)
 
 Start the minikube in Local Machine
 ```python
