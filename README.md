@@ -1,8 +1,9 @@
 # ToDo 
 
-ToDo is a Web Application used to monitor tasks to be done.The main two purpose of building Todo application: 
-1. To learn **Full-Stack Development Process.** 
-2. To gain Knowledge to Deploy my app in **Docker** and **Kubernetes**.
+ToDo is a Web Application used to manage tasks to be done.The goals of developing 
+this application are:
+1. To gain experience in **Full-Stack Development** 
+2. To acquire **Docker** and **Kubernetes** skills
 
 ## Technology Stack
 
@@ -11,53 +12,53 @@ ToDo is a Web Application used to monitor tasks to be done.The main two purpose 
 
 ## Deployment
 ### Docker
-Build a couple of  Docker image:
+Build docker images:
 Picture for Frontend and Backend
 ```python
-$ cd Deploy/Docker
-```
-Build the image for Frontend
-```python
+$ cd deploy/docker
 $ docker build -f Dockerfile-frontend -t abinavram/todoappangular .
-
 $ docker build -f Dockerfile-backend -t abinavram/todoappnode .
 ```
-"abinavram/todoappangular" - Image tag for Frontend
-"abinavram/todoappangular" - Image tag for Backend
+"abinavram/todoappangular" is the image tag for Frontend
+"abinavram/todoappnode" is the image tag for Backend
 
-Run the Docker image using Container:
-Need to specify the port to access the app outside the container and view in Browser
+Run the Docker images:
 ```python
 $ docker run -p 4200:4200 abinavram/todoappangular
 $ docker run -p 8080:8080 abinavram/todoappnode
 ```
-Push the image to Docker Hub
+Port number 4200 is the port exposed by the frontend container so that the app can be accessed outside the container and viewed in a browser.
+
+Push the image to Docker hub
 ```python
 $ docker push abinavram/todoappangular
 $ docker push abinavram/todoappnode
 ```
-Successfully build the two images for both frontend and Backend and Uploaded to the Docker Hub :)
-### Docker-Compose
-Docker - Compose will run the multiple images in a multiple container . So that Containers can be accessable.
+To verify you may visit Docker hub and verify the images.
+### docker-compose
+`docker-compose` , a single command will brings up multiple containers.
 ```python
 $ docker-compose up
 ```
-Above command will run three images : abinavram/todoappangular, abinavram/todoappnode and mongo.
+Above command will bring up three containers : 
+- abinavram/todoappangular
+- abinavram/todoappnode 
+- mongo.
 Picture for Representation three images
 ### Kubernetes
 ![](images/kube_design.png)
 
-Start the minikube in Local Machine
+Start the minikube in local Machine
 ```python
 $ minikube start
-$ cd Deploy/Minikube
+$ cd deploy/minikube
 ```
-Create a Deployment in Minikube 
+Create a deployment in Minikube 
 ```python
 $ kubectl create -f angular.yaml
   deployment.apps/angular-deployment created
   service/angular-service created
-$ kubectl create -f node-deploment.yaml
+$ kubectl create -f node-deployment.yaml
   deployment.apps/node created
 $ kubectl create -f node-service.yaml
   service/node created
@@ -66,7 +67,7 @@ $ kubectl create -f mongo-deployment.yaml
 $ kubectl create -f mongo-service.yaml
   service/mongo created
 ```
-Check the Pods and Services are created
+To verify that pods and services are created:
 ```python
 $ kubectl get pods
   NAME                                  READY   STATUS    RESTARTS   AGE
@@ -80,17 +81,13 @@ $ kubectl get services
   mongo             ClusterIP      10.111.148.221   <none>          27017/TCP        6d14h
   node              LoadBalancer   10.100.71.34     10.100.71.34    8080:30266/TCP   6d14h
 ```
-Successfully created Services Pods and Deployment,
-Name of Service created: 
-mongo-service , node-service and angular-service.
+Note that the names of services created are: 
+mongo-service, node-service and angular-service.  To view the application in browser:
 ```python
 $ minikube service angular-service
 ```
-You will be able to view the application in Browser.
 
-### Heroku Cloud
-
-I have deployed Todo Application in Heroku Cloud.
+### Deploy the application in Heroku Cloud
 
 Build the Angular project using Angular CLI: 
 ```python
@@ -107,11 +104,7 @@ chunk {1} main-es5.cb907541ee775e80933f.js (main) 415 kB [initial] [rendered]
 chunk {4} styles.2935066d9c3bef3ac975.css (styles) 204 kB [initial] [rendered]
 Date: 2020-08-31T14:55:13.259Z - Hash: e45636d1e1daf4a0e969 - Time: 120713ms
 ```
-Above command will build the entire project in dist/project-name folder.
-
-For deploying application in heroku App, Run the dist/project-name folder.
-
-The below steps will run the application (dist/project-name)  in Heroku Cloud:
+Above command will build the entire project in dist/project-name folder.  For deploying application in heroku App, Run the dist/project-name folder.  The below steps will run the application (dist/project-name)  in Heroku Cloud:
 
 1. Create a server.js file
 2.Add the below line in server.js file :
